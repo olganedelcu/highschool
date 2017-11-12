@@ -1,42 +1,11 @@
 <head>
   <title>Grades</title>
+  <meta charset="UTF-8">
+
   <!-- Esto le añade titulo a la pestaña -->
   <link rel="stylesheet" href="./index.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
-  <script>
-    function display(e) {
-      document.getElementById('matematics').innerHTML = 'Matematicas: ' + e.target.value
-    }
-
-    function validate(value, field_name){
-        if(value > 10 || value < 0){
-          document.getElementById(field_name).classList.remove('valid')
-          document.getElementById(field_name).classList.add('error')
-          document.getElementById(field_name + '-error').innerHTML = 'Valor entre 0 y 10!'
-        }else{
-          document.getElementById(field_name).classList.remove('error')
-          document.getElementById(field_name).classList.add('valid')
-          document.getElementById(field_name + '-error').innerHTML = ''
-        }
-    }
-
-    function calculate(e) {
-      var math = Number(document.getElementById('math').value || 10)
-      validate(math, 'math')
-      var social = Number(document.getElementById('social').value || 10)
-      validate(social, 'social')
-      var spanish = Number(document.getElementById('spanish').value || 10)
-      var english = Number(document.getElementById('english').value || 10)
-      var fisics = Number(document.getElementById('fisics').value || 10)
-      var chemisty = Number(document.getElementById('chemisty').value || 10)
-      var graphics = Number(document.getElementById('graphics').value || 10)
-      var average = (math + social + spanish + english + fisics + chemisty + graphics) / 7
-      var selectividad = average + 4
-
-      document.getElementById('average').innerHTML = average.toFixed(2)
-      document.getElementById('selectividad').innerHTML = selectividad.toFixed(2)
-    }
-  </script>
+  <script src='./index.js'></script>
 </head>
 
 <body>
@@ -46,7 +15,7 @@
         <h1> Notas </h1>
       </div>
       <div class="input-group">
-        <p>Matematicas</p>
+        <p>Matemáticas</p>
         <input id="math" value="10" type="number" onchange="return calculate(event)"></input>
         <div class="error-mes">
           <span id="math-error"><span>
@@ -60,18 +29,33 @@
       </div>
       <div class="input-group">
         <p>Lengua</p><input id="spanish" value="10" type="number" onchange="return calculate(event)"></input>
+        <div class="error-mes">
+          <span id="spanish-error"><span>
+        </div>
       </div>
       <div class="input-group">
-        <p>Ingles</p><input id="english" value="10" type="number" onchange="return calculate(event)"></input>
+        <p>Inglés</p><input id="english" value="10" type="number" onchange="return calculate(event)"></input>
+        <div class="error-mes">
+          <span id="english-error"><span>
+        </div>
       </div>
       <div class="input-group">
         <p>Física </p><input id="fisics" value="10" type="number" onchange="return calculate(event)"></input>
+       <div class="error-mes">
+         <span id="fisics-error"><span>
+      </div>
       </div>
       <div class="input-group">
         <p>Química</p><input id="chemisty" value="10" type="number" onchange="return calculate(event)"></input>
+        <div class="error-mes">
+           <span id="chemisty-error"><span>
+         </div>
       </div>
       <div class="input-group">
-        <p>Dibujo Técnico</p><input id="graphics" value="10" type="number" onchange="return calculate(event)"></input>
+      <p>Dibujo Técnico</p><input id="graphics" value="10" type="number" onchange="return calculate(event)"></input>
+        <div class="error-mes">
+          <span id="graphics-error"><span>
+        </div>
       </div>
     </form>
     <div class="columna">
