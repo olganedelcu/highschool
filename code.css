@@ -1,11 +1,24 @@
-.nav li{
-  display: inline;
+.inline{
+  background-position: center;
+  background-color: #ffffff;
+  height:240px;
+  width:240 ;
 }
-.jumbotron h1 {
-  position: relative;
-  top: 0px;
-  left: 55px;
+.nav{
+  background-position:center;
 }
-.neighborhood-guide{
+.container{
+  background-position: center;
 
 }
+.pull-left{
+  font-family: cursive;
+  font-style: normal;
+  width: 43;
+  height: 23;
+  font-size: 12px;
+  line-height: 12px;
+  padding-top: 3px;
+  padding-right: 2px;
+  padding-left: 1px;
+  }
