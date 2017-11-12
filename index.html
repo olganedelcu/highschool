@@ -8,9 +8,23 @@
       document.getElementById('matematics').innerHTML = 'Matematicas: ' + e.target.value
     }
 
+    function validate(value, field_name){
+        if(value > 10 || value < 0){
+          document.getElementById(field_name).classList.remove('valid')
+          document.getElementById(field_name).classList.add('error')
+          document.getElementById(field_name + '-error').innerHTML = 'Valor entre 0 y 10!'
+        }else{
+          document.getElementById(field_name).classList.remove('error')
+          document.getElementById(field_name).classList.add('valid')
+          document.getElementById(field_name + '-error').innerHTML = ''
+        }
+    }
+
     function calculate(e) {
       var math = Number(document.getElementById('math').value || 10)
+      validate(math, 'math')
       var social = Number(document.getElementById('social').value || 10)
+      validate(social, 'social')
       var spanish = Number(document.getElementById('spanish').value || 10)
       var english = Number(document.getElementById('english').value || 10)
       var fisics = Number(document.getElementById('fisics').value || 10)
@@ -32,10 +46,17 @@
         <h1> Notas </h1>
       </div>
       <div class="input-group">
-        <p>Matematicas</p><input id="math" value="10" type="number" onchange="return calculate(event)"></input>
+        <p>Matematicas</p>
+        <input id="math" value="10" type="number" onchange="return calculate(event)"></input>
+        <div class="error-mes">
+          <span id="math-error"><span>
+        </div>
       </div>
       <div class="input-group">
         <p>Sociales</p><input id="social" value="10" type="number" onchange="return calculate(event)"></input>
+        <div class="error-mes">
+          <span id="social-error"><span>
+        </div>
       </div>
       <div class="input-group">
         <p>Lengua</p><input id="spanish" value="10" type="number" onchange="return calculate(event)"></input>
@@ -59,11 +80,11 @@
       </div>
       <div class="input-group result-group">
         <p>Nota Media:</p>
-        <p id="average"></p>
+        <p id="average">10</p>
       </div>
       <div class="input-group result-group">
         <p>Nota Sobre 14:</p>
-        <p id="selectividad"></p>
+        <p id="selectividad">14</p>
       </div>
     </div>
   </div>

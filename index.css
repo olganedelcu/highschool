@@ -50,6 +50,8 @@ p{
   border-radius: 2px;
   padding: 2px 5px 2px 5px;
   margin-top: 5px;
+  position: relative;
+  height: 60px;
 }
 
 .input-group > input {
@@ -57,6 +59,19 @@ p{
  font-size: 16;
  border: 1px solid grey;
  border-radius: 2px;
+ outline: none;
+}
+
+.input-group > input:focus {
+ outline: none;
+}
+
+.input-group > input.error{
+  border-color: red;
+}
+
+.input-group > input.valid{
+  border-color: green;
 }
 
 .container{
@@ -70,4 +85,14 @@ p{
   flex-direction: column;
   width: 50%;
   padding: 5%;
+}
+
+
+.error-mes{
+  color: red;
+  position: absolute;
+  bottom: 2px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  right: 10px;
 }
