@@ -13,38 +13,61 @@ p{
 .input-group {
   display: flex;
   justify-content: space-between;
-  width: 240px;
-  width: 240px;
   align-items: baseline;
-
 }
 
-.result-group {
+.title {
+  padding: 0px 0px 0px 5px;
+}
+
+.root {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.result-group:hover{
+  background-color: #660066;
+  color: white;
+}
+
+.result-group:hover > p{
+  color: white;
+}
+
+
+.selectividad{
   display: flex;
   justify-content: space-between;
-  width: 240px;
-  width: 245px;
-  height:34px;
-  align-items: baseline;
-  border-style: ridge;
-
+  padding: 5px;
+  border: 1px solid grey;
 }
 
-
-.input-group > input{
-  height: 20px;
+.input-group {
+  border: 1px solid grey;
   border-radius: 2px;
-  border-width: 1px;
+  padding: 2px 5px 2px 5px;
+  margin-top: 5px;
 }
 
+.input-group > input {
+ padding: 5px;
+ font-size: 16;
+ border: 1px solid grey;
+ border-radius: 2px;
+}
 
 .container{
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
+  position:static;
 }
-.selectividad{
-   border-style: ridge;
-   width:240px;
-   height: 78;
-   justify-content: space-between;
+
+.columna {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 5%;
 }

@@ -1,36 +1,34 @@
-<link rel="stylesheet" href="./index.css">
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+<head>
+  <title>Grades</title>
+  <!-- Esto le añade titulo a la pestaña -->
+  <link rel="stylesheet" href="./index.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+  <script>
+    function display(e) {
+      document.getElementById('matematics').innerHTML = 'Matematicas: ' + e.target.value
+    }
 
-<script>
-  function display(e) {
-    document.getElementById('matematics').innerHTML = 'Matematicas: ' + e.target.value
-  }
+    function calculate(e) {
+      var math = Number(document.getElementById('math').value || 10)
+      var social = Number(document.getElementById('social').value || 10)
+      var spanish = Number(document.getElementById('spanish').value || 10)
+      var english = Number(document.getElementById('english').value || 10)
+      var fisics = Number(document.getElementById('fisics').value || 10)
+      var chemisty = Number(document.getElementById('chemisty').value || 10)
+      var graphics = Number(document.getElementById('graphics').value || 10)
+      var average = (math + social + spanish + english + fisics + chemisty + graphics) / 7
+      var selectividad = average + 4
 
-  function calculate(e) {
-
-
-    var math = Number(document.getElementById('math').value || 10)
-    var social = Number(document.getElementById('social').value || 10)
-    var spanish = Number(document.getElementById('spanish').value || 10)
-    var english = Number(document.getElementById('english').value || 10)
-    var fisics = Number(document.getElementById('fisics').value || 10)
-    var chemisty = Number(document.getElementById('chemisty').value || 10)
-    var graphics = Number(document.getElementById('graphics').value || 10)
-
-
-    var average = (math + social + spanish + english + fisics + chemisty + graphics) / 7
-    var selectividad = average + 4
-
-    document.getElementById('average').innerHTML = average
-    document.getElementById('selectividad').innerHTML = selectividad
-  }
-</script>
+      document.getElementById('average').innerHTML = average.toFixed(2)
+      document.getElementById('selectividad').innerHTML = selectividad.toFixed(2)
+    }
+  </script>
+</head>
 
 <body>
-
-  <div class="container">
-    <form id="form-grades">
-      <div>
+  <div class="root">
+    <form id="form-grades" class="columna">
+      <div class="title">
         <h1> Notas </h1>
       </div>
       <div class="input-group">
@@ -54,17 +52,18 @@
       <div class="input-group">
         <p>Dibujo Técnico</p><input id="graphics" value="10" type="number" onchange="return calculate(event)"></input>
       </div>
-
     </form>
-
-    <div class="result-group">
-      <p>Average:</p>
-      <p id="average"></p>
-   </div>
-   <div class="selectividad">
-     <p>Nota sobre 14:</p>
-     <p id="selectividad"></p>
-
-
-
+    <div class="columna">
+      <div class="title">
+        <h1> Resultado </h1>
+      </div>
+      <div class="input-group result-group">
+        <p>Nota Media:</p>
+        <p id="average"></p>
+      </div>
+      <div class="input-group result-group">
+        <p>Nota Sobre 14:</p>
+        <p id="selectividad"></p>
+      </div>
     </div>
+  </div>
