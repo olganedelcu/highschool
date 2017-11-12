@@ -1,0 +1,50 @@
+body{
+  background-color: 	#ffffff	;
+}
+ h1, h2, h3{
+  font-family: 'Roboto', sans-serif;
+  color: #660066;
+}
+p{
+    font-family: 'Roboto', sans-serif;
+    color: #000066;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  width: 240px;
+  width: 240px;
+  align-items: baseline;
+
+}
+
+.result-group {
+  display: flex;
+  justify-content: space-between;
+  width: 240px;
+  width: 245px;
+  height:34px;
+  align-items: baseline;
+  border-style: ridge;
+
+}
+
+
+.input-group > input{
+  height: 20px;
+  border-radius: 2px;
+  border-width: 1px;
+}
+
+
+.container{
+    display: flex;
+    justify-content: space-around;
+}
+.selectividad{
+   border-style: ridge;
+   width:240px;
+   height: 78;
+   justify-content: space-between;
+}

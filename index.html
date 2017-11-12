@@ -1,33 +1,70 @@
+<link rel="stylesheet" href="./index.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 
 <script>
+  function display(e) {
+    document.getElementById('matematics').innerHTML = 'Matematicas: ' + e.target.value
+  }
+
+  function calculate(e) {
 
 
-function display(e){
-  document.getElementById('matematics').innerHTML = 'Matematicas: ' + e.target.value
-}
+    var math = Number(document.getElementById('math').value || 10)
+    var social = Number(document.getElementById('social').value || 10)
+    var spanish = Number(document.getElementById('spanish').value || 10)
+    var english = Number(document.getElementById('english').value || 10)
+    var fisics = Number(document.getElementById('fisics').value || 10)
+    var chemisty = Number(document.getElementById('chemisty').value || 10)
+    var graphics = Number(document.getElementById('graphics').value || 10)
 
+
+    var average = (math + social + spanish + english + fisics + chemisty + graphics) / 7
+    var selectividad = average + 4
+
+    document.getElementById('average').innerHTML = average
+    document.getElementById('selectividad').innerHTML = selectividad
+  }
 </script>
 
-<div>
-<p>Matematicas</p><input type="number" onchange="return display(event)"></input>
-</div>
-<div>
-<p>Lengua</p><input></input>
-</div>
-<div>
-<p>Historia</p><input></input>
-</div>
-<div>
-<p>Matematicas</p><input></input>
-</div>
-<div>
-<p>Matematicas</p><input></input>
-</div>
-<div>
-<p>Matematicas</p><input></input>
-</div>
+<body>
 
-<div id="matematics">
+  <div class="container">
+    <form id="form-grades">
+      <div>
+        <h1> Notas </h1>
+      </div>
+      <div class="input-group">
+        <p>Matematicas</p><input id="math" value="10" type="number" onchange="return calculate(event)"></input>
+      </div>
+      <div class="input-group">
+        <p>Sociales</p><input id="social" value="10" type="number" onchange="return calculate(event)"></input>
+      </div>
+      <div class="input-group">
+        <p>Lengua</p><input id="spanish" value="10" type="number" onchange="return calculate(event)"></input>
+      </div>
+      <div class="input-group">
+        <p>Ingles</p><input id="english" value="10" type="number" onchange="return calculate(event)"></input>
+      </div>
+      <div class="input-group">
+        <p>Física </p><input id="fisics" value="10" type="number" onchange="return calculate(event)"></input>
+      </div>
+      <div class="input-group">
+        <p>Química</p><input id="chemisty" value="10" type="number" onchange="return calculate(event)"></input>
+      </div>
+      <div class="input-group">
+        <p>Dibujo Técnico</p><input id="graphics" value="10" type="number" onchange="return calculate(event)"></input>
+      </div>
+
+    </form>
+
+    <div class="result-group">
+      <p>Average:</p>
+      <p id="average"></p>
+   </div>
+   <div class="selectividad">
+     <p>Nota sobre 14:</p>
+     <p id="selectividad"></p>
 
 
-<div>
+
+    </div>
