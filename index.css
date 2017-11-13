@@ -85,7 +85,7 @@ p{
   flex-direction: column;
   width: 50%;
   padding: 5%;
- padding-top:3px;
+  padding-top:3px;
 }
 
 
@@ -96,4 +96,18 @@ p{
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   right: 10px;
+}
+.new{
+  color:#660066;
+  position: absolute;
+  right: unset;
+  height:auto;
+  font-family: Roboto ,sans-serif;
+  margin-top: 223;
+  margin-left: 155;
+
+}
+.block{
+  border:1px 4px 6px 4px;
+  border color: black;
 }
